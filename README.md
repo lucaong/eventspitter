@@ -42,10 +42,11 @@ identical. Some notable differences are that `EventSpitter`:
 
   - lets you match events using regular expressions
 
-  - passes the name of the event as the first arument to callbacks
+  - passes the name of the event as the first argument to callbacks
 
   - returns `this` in most method, enabling chainability
 
+  - does not treat the 'error' event in any special way
 
 ## Methods
 
