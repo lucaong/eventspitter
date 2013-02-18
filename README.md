@@ -1,6 +1,6 @@
 # EventSpitter
 
-A minimal but versatile JavaScript pubsub module, very similar to
+A minimal but versatile JavaScript pub/sub module, very similar to
 Node's `EventEmitter`, but more flexible and working also in the
 browser.
 
@@ -44,8 +44,7 @@ each additional argument (like `arg1`, `arg2`, etc.)
 Returns an array of all the callbacks which are executed when `event`
 is emitted.
 
-### off( [matcher], [cbk] ), removeListener( [matcher], [cbk] ),
-removeAllListeners( [matcher], [cbk] )
+### off( [matcher], [cbk] ), removeListener( [matcher], [cbk] ), removeAllListeners( [matcher], [cbk] )
 
 If called with no arguments, removes every event listener. If called
 only with an event matcher (`String` or `RegExp`), it removes all
