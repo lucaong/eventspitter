@@ -1,0 +1,29 @@
+{
+  "author": "Luca Ongaro <mail@lucaongaro.eu> (http://www.lucaongaro.eu)",
+  "name": "pubsubby",
+  "description": "Minimal JavaScript PubSub",
+  "version": "0.0.0",
+  "main": "./lib/eventspitter.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:lucaong/eventspitter.git"
+  },
+  "keywords": [
+    "pubsub",
+    "event",
+    "publish/subscribe"
+  ],
+  "scripts": {
+    "test": "npm run compile && ./node_modules/.bin/buster-test -c spec/buster.js",
+    "compile": "./node_modules/.bin/coffee -c ./lib/eventspitter.coffee",
+    "minify": "./node_modules/.bin/uglifyjs ./lib/eventspitter.js -o ./lib/eventspitter.min.js",
+    "build": "npm run compile && npm run minify"
+  },
+  "devDependencies": {
+    "buster": "0.6.x",
+    "coffee-script": "",
+    "buster-coffee": "",
+    "uglify-js": ""
+  },
+  "license": "MIT"
+}
