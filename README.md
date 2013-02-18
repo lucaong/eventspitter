@@ -1,25 +1,50 @@
 # EventSpitter
 
-A minimal but versatile JavaScript pub/sub module, very similar to
-Node's `EventEmitter`, but more flexible and working also in the
-browser.
+A minimal but versatile JavaScript pub/sub module, very similar to Node's
+`EventEmitter`, but more flexible and working also in the browser. It can be
+required with CommonJS, AMD and standard browser `<script>` tag. Coffeescript
+version provided too.
+
+
+## Usage
+
+```javascript
+var es = new eventSpitter;
+
+// Attach a listener to an event 'foo'
+es.on("foo", function( evt, arg1, arg2 ) {
+  console.log( "I was triggered by event " + evt );
+  console.log( "I was passed additional arguments " + arg1 + " and " + arg2 );
+});
+
+// Attach a listener using a regular expression
+es.on(/^f/, function() {
+  console.log("I am listening to any event starting with 'f'");
+});
+
+// Emit an event 'foo' passing additional arguments 123 and "xyz"
+es.emit("foo", 123, "xyz");
+
+// Most methods are chainable
+es.on("bar", function() {
+  console.log("bar!");
+}).emit("foo").emit("bar");
+```
+
 
 ## EventSpitter vs. EventEmitter
 
-Although their APIs are not exactly identical, `EventSpitter` and
-Node's `EventEmitter` are very similar. While `EventEmitter` is the
-standard in Node, `EventSpitter` has the following additional
-features:
+Altough `EventSpitter` and Node's `EventEmitter` are a lot similar,
+`EventSpitter` is not meant as a drop-in replacement, as the API is not
+identical. Some notable differences are that `EventSpitter`:
 
-  - It works in the browser too
+  - is meant to work also in the browser
 
-  - It supports matching events using a RegExp (e.g. `obj.on( /^f/,
-    cbk )` attaches the callback to any event starting with "f")
+  - lets you match events using regular expressions
 
-  - It supports chainability, as most methods return `this`
+  - passes the name of the event as the first arument to callbacks
 
-Another difference is that `EventSpitter` always passes the event
-name as the first argument to the event handlers.
+  - returns `this` in most method, enabling chainability
 
 
 ## Methods
