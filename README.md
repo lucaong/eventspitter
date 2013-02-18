@@ -9,7 +9,7 @@ version provided too.
 ## Usage
 
 ```javascript
-var es = new eventSpitter;
+var es = new EventSpitter;
 
 // Attach a listener to an event 'foo'
 es.on("foo", function( evt, arg1, arg2 ) {
