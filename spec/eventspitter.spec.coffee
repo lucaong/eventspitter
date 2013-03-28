@@ -47,6 +47,13 @@ describe "EventSpitter", ->
       @es.on /^b/,  cbk2
       expect( @es.listeners "foo" ).toEqual []
 
+    it "does not modify the subscription array for an event", ->
+      @es.on "foo", ->
+      @es.on /foo/, ->
+      orig_sub = @es.subscriptions.foo[..]
+      @es.listeners "foo"
+      expect( @es.subscriptions.foo ).toEqual orig_sub
+
   describe "emit", ->
 
     it "returns this", ->

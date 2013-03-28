@@ -22,10 +22,10 @@ class EventSpitter
 
   listeners: ( evt ) ->
     @subscriptions ?= {}
-    callbacks = @subscriptions[ evt ] || []
+    callbacks = @subscriptions[ evt ] or []
     for key, subscription of @regexpSubscriptions
       if subscription.regexp.exec( evt )?
-        callbacks.push.apply callbacks, subscription.callbacks
+        return callbacks.concat subscription.callbacks
     callbacks
 
   emit: ( evt, args... ) ->
