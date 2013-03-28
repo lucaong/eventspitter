@@ -77,3 +77,10 @@ only with an event matcher (`String` or `RegExp`), it removes all
 listeners listening to that matcher. If called passing a matcher and
 a callback, it removes only that one callback from the listeners
 listening to that matcher.
+
+
+# Changelog
+
+  * 0.0.1 - Fix bug with listeners method modifying the array of subscriptions
+
+  * 0.0.0 - First alpha release
