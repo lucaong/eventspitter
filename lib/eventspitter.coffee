@@ -39,9 +39,9 @@ class EventSpitter
     else
       unless cbk?
         if isRegExp matcher
-          delete @regexpSubscriptions[ matcher ]
+          delete @regexpSubscriptions?[ matcher ]
         else
-          delete @subscriptions[ matcher ]
+          delete @subscriptions?[ matcher ]
       else
         cbks = []
         if isRegExp matcher

@@ -123,6 +123,11 @@ describe "EventSpitter", ->
         @es.off /foo/
         expect( @es.regexpSubscriptions["/bar/"]? ).toBeTrue()
 
+      it "does not crash if there are no subscriptions", ->
+        delete @es.subscriptions
+        delete @es.regexpSubscriptions
+        refute.exception( => @es.off "foo" )
+
     describe "when called with two arguments", ->
 
       it "removes the given callback from subscriptions to the given string event matcher", ->
