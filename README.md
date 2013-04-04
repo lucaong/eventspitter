@@ -81,6 +81,8 @@ listening to that matcher.
 
 # Changelog
 
+  * 0.0.2 - Fix bug with `off` when there are no subscriptions
+
   * 0.0.1 - Fix bug with listeners method modifying the array of subscriptions
 
   * 0.0.0 - First alpha release

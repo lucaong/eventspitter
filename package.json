@@ -2,7 +2,7 @@
   "author": "Luca Ongaro <mail@lucaongaro.eu> (http://www.lucaongaro.eu)",
   "name": "eventspitter",
   "description": "Minimal but versatile JavaScript pub/sub working everywhere",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "./lib/eventspitter.js",
   "repository": {
     "type": "git",
