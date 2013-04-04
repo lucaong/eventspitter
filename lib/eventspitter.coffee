@@ -24,8 +24,8 @@ class EventSpitter
     @subscriptions ?= {}
     callbacks = @subscriptions[ evt ] or []
     for key, subscription of @regexpSubscriptions
-      if subscription.regexp.exec( evt )?
-        return callbacks.concat subscription.callbacks
+      if subscription.regexp.test evt
+        callbacks = callbacks.concat subscription.callbacks
     callbacks
 
   emit: ( evt, args... ) ->

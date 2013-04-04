@@ -36,9 +36,11 @@ describe "EventSpitter", ->
     it "returns all callbacks matching the given event", ->
       cbk1 = ->
       cbk2 = ->
+      cbk3 = ->
       @es.on "foo", cbk1
       @es.on /^f/,  cbk2
-      expect( @es.listeners "foo" ).toEqual [ cbk1, cbk2 ]
+      @es.on /^fo/, cbk3
+      expect( @es.listeners "foo" ).toEqual [ cbk1, cbk2, cbk3 ]
 
     it "does not return callbacks not matching the given event", ->
       cbk1 = ->
