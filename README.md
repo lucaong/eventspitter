@@ -81,6 +81,8 @@ listening to that matcher.
 
 # Changelog
 
+  * 0.0.4 - Available as a Bower component
+
   * 0.0.3 - Fix bugs with RegExp listeners
 
   * 0.0.2 - Fix bug with `off` when there are no subscriptions
