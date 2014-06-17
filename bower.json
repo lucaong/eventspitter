@@ -1,0 +1,28 @@
+{
+  "name": "eventspitter",
+  "version": "0.0.3",
+  "homepage": "https://github.com/lucaong/eventspitter",
+  "authors": [
+    "Luca Ongaro <lukeongaro@gmail.com>"
+  ],
+  "description": "Minimal but versatile JavaScript pub/sub working everywhere",
+  "main": "lib/eventspitter.js",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "pubsub",
+    "event",
+    "publish/subscribe"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
